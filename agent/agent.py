@@ -49,7 +49,7 @@ def collect_metrics():
 def post_metrics(payload):
     try:
         resp = requests.post(
-            f"{SERVER_URL}/metrics",
+            f"{SERVER_URL.rstrip('/')}/metrics",
             json=payload,
             headers={"X-API-KEY": API_KEY},
             timeout=10
